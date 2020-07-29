@@ -1,5 +1,16 @@
 function searchString(obj) {
-  // Напиши свой код здесь
+    if (Object.keys(obj).length < 1) {
+        return "";
+    }
+
+    let string = "?";
+
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key) && obj[key] !== undefined && obj[key] !== null && obj[key] !== "") {
+            string += key + "=" + obj[key] + "&";
+        }
+    }
+    return string.slice(0, -1);
 }
 
 window.searchString = searchString;
