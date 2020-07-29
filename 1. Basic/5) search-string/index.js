@@ -1,5 +1,5 @@
 function searchString(obj) {
-    if (Object.keys(obj).length < 1) {
+    if (!Object.keys(obj).length) {
         return "";
     }
 
