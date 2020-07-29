@@ -10,13 +10,15 @@ function stringToType(str) {
             return false;
         case "":
             return "";
+        default: {
+            if (!isNaN(Number(str))) {
+                return Number(str);
+            }
+            return str;
+        }
     }
 
-    if (!isNaN(Number(str))) {
-        return Number(str);
-    }
 
-    return str;
 }
 
 window.stringToType = stringToType;
