@@ -1,12 +1,21 @@
 function fullSum(...args) {
-    let sum = 0;
-    for (let i = 0; i < args.length; i++) {
-        if (typeof args[i] !== "number") {
-            throw ("Wrong Argument Type");
-        }
-        sum += args[i];
+
+
+    if (args.some(function (args) {
+        return typeof args !== "number";
+
+    })) {
+        throw "Wrong Argument Type";
     }
-    return sum;
+    try {
+        return args.reduce(function (a, b) {
+            return a + b;
+        })
+    } catch {
+        return 0;
+    }
+
+
 }
 
 window.fullSum = fullSum;
