@@ -6,8 +6,8 @@ function isEqual(a, b) {
         return false;
     }
     for (let key in a) {
-        const cnd = (typeof a[key] === "object" || typeof b[key] === "object") && a[key] !== null && b[key] !== null;
-        if (cnd) {
+        const outerCond = (typeof a[key] === "object" || typeof b[key] === "object") && a[key] !== null && b[key] !== null;
+        if (outerCond) {
             if (!isEqual(a[key], b[key])) {
                 return false;
             }
@@ -15,8 +15,8 @@ function isEqual(a, b) {
             if (a[key] !== b[key]) {
                 return false;
             }
-            const inn = typeof a[key] === "undefined" && typeof b[key] === "undefined" && !b.hasOwnProperty(key);
-            if (inn) {
+            const innerCond = typeof a[key] === "undefined" && typeof b[key] === "undefined" && !b.hasOwnProperty(key);
+            if (innerCond) {
                 return false;
             }
         }
