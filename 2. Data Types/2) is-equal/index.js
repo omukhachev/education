@@ -12,10 +12,7 @@ function isEqual(a, b) {
                 return false;
             }
         } else {
-            if (a[key] !== b[key]) {
-                return false;
-            }
-            const innerCond = typeof a[key] === "undefined" && typeof b[key] === "undefined" && !b.hasOwnProperty(key);
+            const innerCond = typeof a[key] === "undefined" && typeof b[key] === "undefined" && !b.hasOwnProperty(key) || a[key] !== b[key];
             if (innerCond) {
                 return false;
             }
