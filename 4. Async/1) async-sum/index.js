@@ -2,10 +2,9 @@ function asyncSum(a, b) {
     return new Promise((resolve, reject) => {
         const isNumber = typeof a === "number" && typeof b === "number";
         if (isNumber) {
-                resolve(a + b);
-        } else {
-            reject(new Error("not a number"));
+            resolve(a + b);
         }
+        reject(new Error("not a number"));
     })
 }
 
