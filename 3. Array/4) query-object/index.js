@@ -1,17 +1,11 @@
 function queryToObject(query) {
-    let arr = query.slice(1).split("&");
-    let obj = {};
-    let subArr;
-
-    for (let i = 0; i < arr.length; i++) {
-        subArr = arr[i].split("=");
-        obj[subArr[0]] = stringToType(subArr[1]);
-
-
-    }
-
-    return obj;
-
+    return query.slice(1).split("&").reduce((acc, cur) => {
+        const [key, value] = cur.split('=');
+        return {
+            [key]: stringToType(value),
+            ...acc,
+        }
+    }, {});
 }
 function stringToType(str) {
     switch (str) {
@@ -35,6 +29,7 @@ function stringToType(str) {
 
 
 }
+
 window.queryToObject = queryToObject;
 
 export default queryToObject;
