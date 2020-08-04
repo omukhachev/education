@@ -6,7 +6,7 @@ function xhrGet(url) {
         xhr.responseType = "json";
         xhr.send();
         xhr.onload = () => {
-            xhr.status.toString()[0] === "2" ? resolve(xhr.response) : reject(xhr.response);
+            xhr.status.toString().search("2") !== -1 ? resolve(xhr.response) : reject(xhr.response);
         }
     })
 }
