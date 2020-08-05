@@ -13,7 +13,7 @@
  */
 
 function isValidEmail(email) {
-  // Напиши свой код здесь
+    return /@\w\w*\.\w\w/.test(email) && !/^\.|^,|^;|^:|\.@|\.\.|@\S*@/.test(email);
 }
 
 window.isValidEmail = isValidEmail;
