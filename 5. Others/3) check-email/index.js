@@ -13,7 +13,7 @@
  */
 
 function isValidEmail(email) {
-    return /\w*@\w+\.[A-Za-z][A-Za-z]+/.test(email);
+    return /^[^@\s][\w_.]+@[\w_.]+\.[A-z][A-z]+$/.test(email);
 }
 
 window.isValidEmail = isValidEmail;
