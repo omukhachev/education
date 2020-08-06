@@ -39,13 +39,7 @@ class Stack {
     }
 
     print() {
-        let printArr = this.arr.map((e,) => {
-            return " " + e;
-        })
-        if (printArr.length > 0) {
-            printArr[0] = printArr[0].trim();
-        }
-        return ("[" + printArr + "]");
+        return `[${this.arr.join(", ")}]`;
     }
 
     isEmpty() {
